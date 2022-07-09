@@ -25,17 +25,26 @@ function App() {
     })
   };
 
-  // update PUT request
+  // like PUT request
   const likedPic = (id) => {
-    
     axios.put(
-    `/gallery/${id}`
+    `/gallery/like/${id}`
     ).then((response) => {
     getGallery();
-    console.log('Pic is liked:', id);
+    console.log('Pic is liked ID:', id);
     }).catch(function(error){
     alert('Something went wrong in the PUT /gallery :(')
     })
+  };
+
+  const [isHidden, setIsHidden] = useState(false);
+  //function to flip pics
+  const handlePicFlip = () => {
+    if (isHidden) {
+      setIsHidden(false);
+    } else {
+      setIsHidden(true);
+    }
   };
 
     return (
@@ -47,12 +56,16 @@ function App() {
 
         <div>
           {galleryList.map((galleryItem) => {
-          return (<h5 key={galleryItem.id}> <img src={galleryItem.path}/>
-          <br></br>
-              <>
-                <button data-id = {galleryItem.id} className = "like button" onClick={() => likedPic(galleryItem.id)}>Like!</button> 
-              </>
-            </h5>)
+          return (<div key={galleryItem.id}> 
+            {isHidden ? (
+              <p onClick={handlePicFlip}>{galleryItem.description}</p>
+              ) : (
+              <img onClick={handlePicFlip} src={galleryItem.path}/>
+            )}
+            <br></br>
+            <button data-id = {galleryItem.id} className = "like button" onClick={() => likedPic(galleryItem.id)}>Like!</button> 
+          </div>)
+          
           })}
         </div>
 
