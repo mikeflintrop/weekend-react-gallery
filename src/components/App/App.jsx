@@ -16,12 +16,12 @@ function App() {
 
   //Get request
   const getGallery = () => {
-    axios.get('/list')
+    axios.get('/gallery')
     .then((response) => {
-        console.log(response.data)
+        console.log('GET /gallery',response.data)
         setGalleryList( response.data )
     }).catch((error) => {
-        console.log( 'error in GET', error)
+        console.log( 'error in GET /gallery', error)
     })
   };
 
@@ -29,12 +29,12 @@ function App() {
   const likedPic = (id) => {
     
     axios.put(
-    `/list/${id}`
+    `/gallery/${id}`
     ).then((response) => {
     getGallery();
     console.log('Pic is liked:', id);
     }).catch(function(error){
-    alert('Something went wrong in the PUT /list :(')
+    alert('Something went wrong in the PUT /gallery :(')
     })
   };
 
@@ -43,11 +43,18 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/mnvikingslogo.png"/>
-        <img src="images/mnwildlogo.jpeg"/>
-        <img src="images/mntwinslogo.png"/>
-        <img src="images/mntwolveslogo.jpeg"/>
+        <h4>SPORTSBALL!!!</h4>
+
+        <div>
+          {galleryList.map((galleryItem) => {
+          return (<h5 key={galleryItem.id}> <img src={galleryItem.path}/>
+          <br></br>
+              <>
+                <button data-id = {galleryItem.id} className = "like button" onClick={() => likedPic(galleryItem.id)}>Like!</button> 
+              </>
+            </h5>)
+          })}
+        </div>
 
       </div>
     );
