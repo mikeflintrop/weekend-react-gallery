@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from "axios";
 
-import {useState} from 'react';
+import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 
-function GalleryList() {
+function GalleryList({ galleryList, getGallery }) {
 
     return (
-        console.log("GalleryList")
-    )
-};
+        <div>
+        {galleryList.map((galleryItem) => {
+        return (
+        <GalleryItem
+            key={galleryItem.id}
+            galleryItem={galleryItem}
+            getGallery={getGallery}
+            />
+            );
+        })}
+        </div>
+    );
+}
 
 export default GalleryList;
