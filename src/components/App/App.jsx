@@ -44,7 +44,10 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <img src="images/mnvikingslogo.png"/>
+        <img src="images/mnwildlogo.jpeg"/>
+        <img src="images/mntwinslogo.png"/>
+        <img src="images/mntwolveslogo.jpeg"/>
 
       </div>
     );
