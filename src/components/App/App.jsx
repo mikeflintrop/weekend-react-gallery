@@ -34,9 +34,9 @@ function App() {
         <h3>SPORTSBALL!!!</h3>
 
         <div>
-          <GalleryList galleryList={galleryList} getGalleryList={getGallery} />
+          <GalleryList galleryList={galleryList} getGallery={getGallery} />
         </div>
-        
+
       </div>  
     );
 }
