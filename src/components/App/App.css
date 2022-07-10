@@ -18,8 +18,36 @@ body {
 }
 
 img {
-  width: 125px;
-  height: 100px;
+  width: 250px;
+  height: 200px;
   margin: 15px;
 }
 
+h4 {
+  color: rgb(24, 12, 163);
+}
+
+/* From uiverse.io by @adamgiebl */
+button {
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: center;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+  background-color: #5667e8;
+  border: none;
+  border-bottom: 5px solid #5667e8;
+  text-shadow: 0px -2px #5667e8;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+button:hover, button:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  border-bottom: 1px solid #5667e8;
+}
