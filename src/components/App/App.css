@@ -23,8 +23,22 @@ img {
   margin: 15px;
 }
 
+img:hover, img:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  cursor: pointer;
+}
+
 h4 {
   color: rgb(24, 12, 163);
+}
+
+h4:hover, h4:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  cursor: pointer;
 }
 
 /* From uiverse.io by @adamgiebl */
@@ -50,4 +64,5 @@ button:hover, button:active {
   -ms-transform: translate(0px,5px);
   transform: translate(0px,5px);
   border-bottom: 1px solid #5667e8;
+  cursor: pointer;
 }
